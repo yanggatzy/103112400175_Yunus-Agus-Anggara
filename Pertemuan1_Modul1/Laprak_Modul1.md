@@ -215,66 +215,148 @@ Program ini menunjukkan penggunaan struktur data (struct) dalam C++ untuk menyim
 
 ## Unguided 
 
-### 1. (isi dengan soal unguided 1)
+### 1. Buatlah program yang menerima input-an dua buah bilangan bertipe float, kemudian memberikan output-an hasil penjumlahan, pengurangan, perkalian, dan pembagian dari dua bilangan tersebut.
 
 ```C++
-source code unguided 1
+#include <iostream>
+using namespace std;
+
+int main(){
+    float angka1, angka2;
+    cout << "Masukan angka 1 : ";
+    cin >> angka1;
+
+    cout << "Masukan angka 2 : ";
+    cin >> angka2;
+
+    cout << "Penjumlahan : " << angka1 + angka2 <<endl;
+    cout << "Pengurangan : " << angka1 - angka2 << endl;
+    cout << "Perkalian : " << angka1 * angka2 << endl;
+    cout << "Pembagian : " << angka1 / angka2 << endl;
+
+    return 0;
+
+}
 ```
 ### Output Unguided 1 :
 
 ##### Output 1
-![Screenshot Output Unguided 1_1](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+![Screenshot Output Unguided 1_1](https://github.com/yanggatzy/103112400175_Yunus-Agus-Anggara/blob/main/Pertemuan1_Modul1/Unguided/Output-Unguided1-Modul1.png)
 
-contoh :
-![Screenshot Output Unguided 1_1](https://github.com/DhimazHafizh/2311102151_Muhammad-Dhimas-Hafizh-Fathurrahman/blob/main/Pertemuan1_Modul1/Output-Unguided1-1.png)
+Program ini adalah kalkulator sederhana yang melakukan operasi aritmetika dasar antara dua angka yang bertipe float.
 
-##### Output 2
-![Screenshot Output Unguided 1_2](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
-
-penjelasan unguided 1 
-
-### 2. (isi dengan soal unguided 2)
+### 2. Buatlah sebuah program yang menerima masukan angka dan mengeluarkan output nilai angka tersebut dalam bentuk tulisan. Angka yang akan di-input-kan user adalah bilangan bulat positif mulai dari 0 s.d 100.
 
 ```C++
-source code unguided 2
+#include <iostream>
+using namespace std;
+
+int main() {
+    int angka;
+    
+    cout << "Masukkan angka (0-100): ";
+    cin >> angka;
+    
+    // Validasi input
+    if (angka < 0 || angka > 100) {
+        cout << "Angka di luar range (0-100)" << endl;
+        return 1;
+    }
+    
+    string puluhan[] = {"", "", "Dua Puluh", "Tiga Puluh", "Empat Puluh", 
+                        "Lima Puluh", "Enam Puluh", "Tujuh Puluh", 
+                        "Delapan Puluh", "Sembilan Puluh"};
+    
+    string satuan[] = {"Nol", "Satu", "Dua", "Tiga", "Empat", "Lima", 
+                       "Enam", "Tujuh", "Delapan", "Sembilan", "Sepuluh",
+                       "Sebelas", "Dua Belas", "Tiga Belas", "Empat Belas",
+                       "Lima Belas", "Enam Belas", "Tujuh Belas", 
+                       "Delapan Belas", "Sembilan Belas"};
+    
+    cout << "Output: ";
+    
+    if (angka == 0) {
+        cout << "Nol";
+    } else if (angka >= 1 && angka <= 19) {
+        cout << satuan[angka];
+    } else if (angka >= 20 && angka <= 99) {
+        int puluh = angka / 10;
+        int satu = angka % 10;
+        
+        cout << puluhan[puluh];
+        if (satu > 0) {
+            cout << " " << satuan[satu];
+        }
+    } else if (angka == 100) {
+        cout << "Seratus";
+    }
+    
+    cout << endl;
+    
+    return 0;
+}
 ```
 ### Output Unguided 2 :
 
 ##### Output 1
-![Screenshot Output Unguided 2_1](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+![Screenshot Output Unguided 2_1](https://github.com/yanggatzy/103112400175_Yunus-Agus-Anggara/blob/main/Pertemuan1_Modul1/Unguided/Output-Unguided2-Modul1.png)
 
-contoh :
-![Screenshot Output Unguided 2_1](https://github.com/DhimazHafizh/2311102151_Muhammad-Dhimas-Hafizh-Fathurrahman/blob/main/Pertemuan1_Modul1/Output-Unguided2-1.png)
+Program ini mengkonversi angka 0-100 menjadi bentuk tulisan bahasa Indonesia dengan menangani angka khusus (0-19, 100) secara terpisah dan angka puluhan (20-99) dengan memisahkan digit puluhan dan satuan.
 
-##### Output 2
-![Screenshot Output Unguided 2_2](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+### 3. Buatlah program yang dapat memberikan input dan output sbb.
 
-penjelasan unguided 2
-
-### 3. (isi dengan soal unguided 3)
+![Screenshot Soal Unguided 3_1](https://github.com/yanggatzy/103112400175_Yunus-Agus-Anggara/blob/main/Pertemuan1_Modul1/Unguided/Soal-Unguided3-Modul1.png)
 
 ```C++
-source code unguided 3
+#include <iostream>
+using namespace std;
+
+int main() {
+    int input;
+    
+    cout << "Input: ";
+    cin >> input;
+    
+    cout << "output: " << endl;
+    
+    for (int i = input; i >= 1; i--) {
+        for (int j = 0; j < input - i; j++) {
+            cout << "  ";
+        }
+        
+        for (int j = i; j >= 1; j--) {
+            cout << j << " ";
+        }
+        
+        cout << "* ";
+        
+        for (int j = 1; j <= i; j++) {
+            cout << j << " ";
+        }
+        
+        cout << endl;
+    }
+    
+    for (int j = 0; j < input; j++) {
+        cout << "  ";
+    }
+    cout << "*" << endl;
+    
+    return 0;
+}
 ```
 ### Output Unguided 3 :
 
 ##### Output 1
-![Screenshot Output Unguided 3_1](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+![Screenshot Output Unguided 3_1](https://github.com/yanggatzy/103112400175_Yunus-Agus-Anggara/blob/main/Pertemuan1_Modul1/Unguided/Output-Unguided3-Modul1.png)
 
-contoh :
-![Screenshot Output Unguided 3_1](https://github.com/DhimazHafizh/2311102151_Muhammad-Dhimas-Hafizh-Fathurrahman/blob/main/Pertemuan1_Modul1/Output-Unguided3-1.png)
-
-##### Output 2
-![Screenshot Output Unguided 3_2](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
-
-penjelasan unguided 3
+Program ini membuat pola piramid terbalik dengan urutan angka menurun di kiri, tanda bintang di tengah, dan urutan angka menaik di kanan.
 
 ## Kesimpulan
 Berdasarkan praktikum yang telah dilakukan, dapat disimpulkan bahwa Code::Blocks merupakan IDE yang efektif untuk pengembangan program C++ dengan fitur yang lengkap. Bahasa C++ menyediakan struktur dasar yang jelas dengan dukungan untuk berbagai tipe data, operator, struktur kontrol, dan fitur pemrograman yang powerful. Pemahaman konsep dasar seperti input/output, operator, percabangan, perulangan, dan struktur data merupakan fondasi essential dalam pengembangan program C++ yang lebih kompleks. Penelitian menunjukkan bahwa penggunaan IDE modern dan pemahaman konsep dasar pemrograman secara signifikan dapat meningkatkan produktivitas dan kualitas kode yang dihasilkan.
 
 ## Referensi
 [1] Triase. (2020). Diktat Edisi Revisi : STRUKTUR DATA. Medan: UNIVERSTAS ISLAM NEGERI SUMATERA UTARA MEDAN. 
-
 <br>[2] Indahyati, Uce., Rahmawati Yunianita. (2020). "BUKU AJAR ALGORITMA DAN PEMROGRAMAN DALAM BAHASA C++". Sidoarjo: Umsida Press. Diakses pada 10 Maret 2024 melalui https://doi.org/10.21070/2020/978-623-6833-67-4.
 <br>
 
