@@ -356,7 +356,8 @@ Program ini membuat pola piramid terbalik dengan urutan angka menurun di kiri, t
 Berdasarkan praktikum yang telah dilakukan, dapat disimpulkan bahwa Code::Blocks merupakan IDE yang efektif untuk pengembangan program C++ dengan fitur yang lengkap. Bahasa C++ menyediakan struktur dasar yang jelas dengan dukungan untuk berbagai tipe data, operator, struktur kontrol, dan fitur pemrograman yang powerful. Pemahaman konsep dasar seperti input/output, operator, percabangan, perulangan, dan struktur data merupakan fondasi essential dalam pengembangan program C++ yang lebih kompleks. Penelitian menunjukkan bahwa penggunaan IDE modern dan pemahaman konsep dasar pemrograman secara signifikan dapat meningkatkan produktivitas dan kualitas kode yang dihasilkan.
 
 ## Referensi
-[1] Triase. (2020). Diktat Edisi Revisi : STRUKTUR DATA. Medan: UNIVERSTAS ISLAM NEGERI SUMATERA UTARA MEDAN. 
+[1] Triase. (2020). Diktat Edisi Revisi : STRUKTUR DATA. Medan: UNIVERSTAS ISLAM NEGERI SUMATERA UTARA MEDAN.
+
 <br>[2] Indahyati, Uce., Rahmawati Yunianita. (2020). "BUKU AJAR ALGORITMA DAN PEMROGRAMAN DALAM BAHASA C++". Sidoarjo: Umsida Press. Diakses pada 10 Maret 2024 melalui https://doi.org/10.21070/2020/978-623-6833-67-4.
 <br>
 
