@@ -2,21 +2,29 @@
 <p align="center">Yunus Agus Anggara - 103112400175</p>
 
 ## Dasar Teori
-isi dengan penjelasan dasar teori disertai referensi jurnal (gunakan kurung siku [] untuk pernyataan yang mengambil refernsi dari jurnal).
-contoh :
-Linked list atau yang disebut juga senarai berantai adalah Salah satu bentuk struktur data yang berisi kumpulan data yang tersusun secara sekuensial, saling bersambungan, dinamis, dan terbatas[1]. Linked list terdiri dari sejumlah node atau simpul yang dihubungkan secara linier dengan bantuan pointer.
 
-### A. ...<br/>
-...
-#### 1. ...
-#### 2. ...
-#### 3. ...
+### A. Array Satu dan Dua Dimensi<br/>
+Array merupakan struktur data fundamental dalam pemrograman yang digunakan untuk menyimpan kumpulan elemen dengan tipe data yang sama [1].
+#### 1. Array Satu Dimensi
+Array satu dimensi adalah kumpulan elemen yang disusun secara linear dalam satu baris. Setiap elemen diakses menggunakan satu indeks yang dimulai dari nol. Deklarasi array satu dimensi dalam C++ dilakukan dengan sintaks tipe_data nama_array[ukuran] [1].
+#### 2. Array Dua Dimensi
+Array dua dimensi merupakan pengembangan dari array satu dimensi yang menyusun elemen dalam bentuk baris dan kolom, membentuk struktur seperti tabel atau matriks. Dalam C++, array dua dimensi dideklarasikan dengan sintaks tipe_data nama_array[baris][kolom] [1].
 
-### B. ...<br/>
-...
-#### 1. ...
-#### 2. ...
-#### 3. ...
+### B. Pointer dan Referensi<br/>
+Pointer adalah variabel khusus yang menyimpan alamat memori dari variabel lain, bukan nilai langsungnya [2].
+#### 1. Pointer dan Array 
+Hubungan antara pointer dan array sangat erat dalam C++. Nama array sendiri sebenarnya merupakan pointer konstan yang menunjuk ke elemen pertama array [2].
+#### 2. Call by Pointer
+Call by pointer adalah mekanisme passing parameter dimana alamat memori dari variabel dilewatkan ke fungsi. Dengan cara ini, fungsi dapat memodifikasi nilai variabel asli karena memiliki akses langsung ke lokasi memorinya [2].
+#### 3. Call by Reference
+Call by reference mirip dengan call by pointer, namun menggunakan reference yang lebih aman dan mudah digunakan. Reference berperilaku seperti alias untuk variabel asli [2].
+
+### C. Function dan Procedure<br/>
+Dalam pemrograman modular, function dan procedure merupakan blok kode yang dirancang untuk melakukan tugas tertentu [3].
+#### 1. Function
+Function adalah subprogram yang mengembalikan nilai setelah dieksekusi. Dalam C++, function dideklarasikan dengan tipe return value tertentu [3].
+#### 2. Procedure
+Procedure (dalam C++ biasanya berupa void function) adalah subprogram yang tidak mengembalikan nilai. Procedure digunakan untuk menjalankan serangkaian perintah tanpa perlu menghasilkan nilai balik [3].
 
 ## Guided 
 
@@ -74,7 +82,7 @@ int main(){
     return 0;
 }
 ```
-penjelasan singkat guided 1
+Program ini mendemonstrasikan operasi matriks 2x2 dengan array dua dimensi. Program melakukan penjumlahan dan perkalian matriks, menunjukkan bagaimana array multidimensi dapat digunakan untuk merepresentasikan dan memanipulasi struktur data tabular.
 
 ### 2. arrNpointer
 
@@ -98,7 +106,7 @@ int main(){
     return 0;
 }
 ```
-penjelasan singkat guided 2
+Program ini mengilustrasikan hubungan erat antara array dan pointer. Menunjukkan dua cara berbeda untuk mengakses elemen array: melalui pointer arithmetic dan melalui indeks array konvensional.
 
 ### 3. Function & Procedure
 
@@ -146,7 +154,7 @@ int main() {
     return 0;
 }
 ```
-penjelasan singkat guided 3
+Program ini menunjukkan penggunaan function yang mengembalikan nilai (cariMAX) dan procedure yang tidak mengembalikan nilai (operasiAritmatika). Mengilustrasikan konsep modular programming dengan memisahkan logika program ke dalam unit-unit yang lebih kecil dan terfokus.
 
 ## Unguided 
 
@@ -277,7 +285,7 @@ int main() {
 
 ![Screenshot Output Unguided 1_1](https://github.com/yanggatzy/103112400175_Yunus-Agus-Anggara/blob/main/Pertemuan2_Modul2/Unguided/Output-Unguided1.2-Modul2.png)
 
-penjelasan unguided 1 
+Program ini mengimplementasikan sistem operasi matriks 3x3 yang komprehensif. Menggunakan array dua dimensi untuk merepresentasikan matriks dan menerapkan konsep modular programming dengan memisahkan setiap operasi ke dalam procedure terpisah. Program menunjukkan penanganan array multidimensi yang efektif dan implementasi antarmuka pengguna berbasis menu.
 
 ### 2. Buatlah program menghitung luas dan keliling persegi panjang dengan proses perhitungan dan perubahan nilainya menggunakan pointer, seperti berikut:
 1) Buatlah 3 variabel integer di fungsi main(): panjang (beri nilai 10), lebar (beri nilai 5), dan
@@ -293,25 +301,63 @@ pointer ptrPanjang dan ptrLebar.
 nilainya telah berubah.
 
 ```C++
-source code unguided 2
+#include<iostream>
+using namespace std;
+
+int main(){
+    int panjang = 10;
+    int lebar = 5;
+    int luas = 0;
+
+    int *ptrpanjang = &panjang;
+    int *ptrlebar = &lebar;
+
+    cout << "--- Nilai Awal ---" << endl;
+    cout << "Panjang: " << panjang << endl;
+    cout << "Lebar: " << lebar << endl;
+
+    cout << "\n--- Hasil Perhitungan ---" << endl;
+    luas = (*ptrpanjang) * (*ptrlebar);
+    cout << "Luas Persegi Panjang: " << luas << endl;
+    cout << "Keliling Persegi Panjang: " << 2 * (*ptrpanjang + *ptrlebar) << endl;
+
+    *ptrpanjang = 12; // Mengubah nilai panjang melalui pointer
+    *ptrlebar = 6;   // Mengubah nilai lebar melalui pointer
+    
+    luas = (*ptrpanjang) * (*ptrlebar);
+    cout << "\n--- Nilai Setelah Diubah Melalui Pointer ---" << endl;
+    cout << "Panjang Baru: " << panjang << endl;
+    cout << "Lebar Baru: " << lebar << endl;
+    cout << "Luas Baru: " << luas << endl;
+    cout << "Keliling Baru: " << 2 * (*ptrpanjang + *ptrlebar) << endl;
+
+    return 0;
+
+}
 ```
 ### Output Unguided 2 :
 
 ##### Output 1
-![Screenshot Output Unguided 2_1](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+![Screenshot Output Unguided 1_1](https://github.com/yanggatzy/103112400175_Yunus-Agus-Anggara/blob/main/Pertemuan2_Modul2/Unguided/Output-Unguided2-Modul2.png)
 
-contoh :
-![Screenshot Output Unguided 2_1](https://github.com/DhimazHafizh/2311102151_Muhammad-Dhimas-Hafizh-Fathurrahman/blob/main/Pertemuan1_Modul1/Output-Unguided2-1.png)
-
-##### Output 2
-![Screenshot Output Unguided 2_2](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
-
-penjelasan unguided 2
+Program ini mendemonstrasikan penggunaan pointer untuk manipulasi variabel. Menunjukkan konsep call by pointer dimana variabel dimodifikasi melalui alamat memorinya. Program membuktikan bahwa perubahan nilai melalui pointer mempengaruhi variabel asli, mengilustrasikan bagaimana pointer memungkinkan akses dan modifikasi data secara langsung di level memori.
 
 ## Kesimpulan
-...
+Berdasarkan praktikum modul 2 tentang pengenalan Bahasa C++ bagian kedua, dapat disimpulkan bahwa:
+
+1) Array satu dan dua dimensi merupakan struktur data fundamental yang efisien untuk mengelola kumpulan data terstruktur, dengan array dua dimensi khususnya berguna untuk merepresentasikan data tabular seperti matriks.
+
+2) Pointer memberikan fleksibilitas tinggi dalam manipulasi memori dan memiliki hubungan erat dengan array, dimana nama array sendiri berperilaku seperti pointer konstan ke elemen pertama.
+
+3) Call by pointer dan call by reference memungkinkan modifikasi variabel asli dalam fungsi.
+
+4) Function dan procedure mendukung pemrograman modular dengan memisahkan kode ke dalam unit-unit fungsional.
+
+5) Penggunaan kombinasi array, pointer, dan function/procedure memungkinkan pengembangan program yang efisien dan terstruktur dengan baik.
 
 ## Referensi
-[1] Triase. (2020). Diktat Edisi Revisi : STRUKTUR DATA. Medan: UNIVERSTAS ISLAM NEGERI SUMATERA UTARA MEDAN. 
-<br>[2] Indahyati, Uce., Rahmawati Yunianita. (2020). "BUKU AJAR ALGORITMA DAN PEMROGRAMAN DALAM BAHASA C++". Sidoarjo: Umsida Press. Diakses pada 10 Maret 2024 melalui https://doi.org/10.21070/2020/978-623-6833-67-4.
-<br>...
+[1] Stroustrup, B. (2013). The C++ Programming Language. Addison-Wesley Professional.
+
+[2] Prata, S. (2011). C++ Primer Plus. Addison-Wesley Professional.
+
+[3] Lippman, S. B., Lajoie, J., & Moo, B. E. (2012). C++ Primer. Addison-Wesley Professional.
