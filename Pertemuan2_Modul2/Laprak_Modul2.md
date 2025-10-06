@@ -4,27 +4,27 @@
 ## Dasar Teori
 
 ### A. Array Satu dan Dua Dimensi<br/>
-Array merupakan struktur data fundamental dalam pemrograman yang digunakan untuk menyimpan kumpulan elemen dengan tipe data yang sama [1].
+Array merupakan struktur data fundamental dalam pemrograman yang digunakan untuk menyimpan kumpulan elemen dengan tipe data yang sama [1]. Array memungkinkan pengelolaan data yang efisien melalui pengelompokan nilai-nilai terkait di bawah satu nama variabel, sehingga memudahkan dalam proses manipulasi dan akses data.
 #### 1. Array Satu Dimensi
-Array satu dimensi adalah kumpulan elemen yang disusun secara linear dalam satu baris. Setiap elemen diakses menggunakan satu indeks yang dimulai dari nol. Deklarasi array satu dimensi dalam C++ dilakukan dengan sintaks tipe_data nama_array[ukuran] [1].
+Array satu dimensi adalah kumpulan elemen yang disusun secara linear dalam satu baris. Setiap elemen diakses menggunakan satu indeks yang dimulai dari nol. Deklarasi array satu dimensi dalam C++ dilakukan dengan sintaks tipe_data nama_array[ukuran]. Keunggulan utama array satu dimensi adalah kemudahan dalam mengelola data sequential dan efisiensi dalam proses iterasi menggunakan perulangan [1].
 #### 2. Array Dua Dimensi
-Array dua dimensi merupakan pengembangan dari array satu dimensi yang menyusun elemen dalam bentuk baris dan kolom, membentuk struktur seperti tabel atau matriks. Dalam C++, array dua dimensi dideklarasikan dengan sintaks tipe_data nama_array[baris][kolom] [1].
+Array dua dimensi merupakan pengembangan dari array satu dimensi yang menyusun elemen dalam bentuk baris dan kolom, membentuk struktur seperti tabel atau matriks. Dalam C++, array dua dimensi dideklarasikan dengan sintaks tipe_data nama_array[baris][kolom]. Struktur ini sangat berguna untuk merepresentasikan data yang memiliki hubungan dua arah seperti matriks dalam matematika, tabel database, atau grid dalam aplikasi grafis [1].
 
 ### B. Pointer dan Referensi<br/>
-Pointer adalah variabel khusus yang menyimpan alamat memori dari variabel lain, bukan nilai langsungnya [2].
+Pointer adalah variabel khusus yang menyimpan alamat memori dari variabel lain, bukan nilai langsungnya [2]. Konsep pointer memungkinkan manipulasi memori yang lebih fleksibel dan efisien dalam pemrograman C++, serta memungkinkan implementasi struktur data dinamis yang kompleks.
 #### 1. Pointer dan Array 
-Hubungan antara pointer dan array sangat erat dalam C++. Nama array sendiri sebenarnya merupakan pointer konstan yang menunjuk ke elemen pertama array [2].
+Hubungan antara pointer dan array sangat erat dalam C++. Nama array sendiri sebenarnya merupakan pointer konstan yang menunjuk ke elemen pertama array. Dengan menggunakan pointer arithmetic, kita dapat mengakses elemen-elemen array secara efisien tanpa perlu menggunakan indeks secara eksplisit [2].
 #### 2. Call by Pointer
-Call by pointer adalah mekanisme passing parameter dimana alamat memori dari variabel dilewatkan ke fungsi. Dengan cara ini, fungsi dapat memodifikasi nilai variabel asli karena memiliki akses langsung ke lokasi memorinya [2].
+Call by pointer adalah mekanisme passing parameter dimana alamat memori dari variabel dilewatkan ke fungsi. Dengan cara ini, fungsi dapat memodifikasi nilai variabel asli karena memiliki akses langsung ke lokasi memorinya. Sintaks yang digunakan melibatkan operator address-of (&) dan dereference (*) untuk mengakses nilai yang ditunjuk [2].
 #### 3. Call by Reference
-Call by reference mirip dengan call by pointer, namun menggunakan reference yang lebih aman dan mudah digunakan. Reference berperilaku seperti alias untuk variabel asli [2].
+Call by reference mirip dengan call by pointer, namun menggunakan reference yang lebih aman dan mudah digunakan. Reference berperilaku seperti alias untuk variabel asli dan tidak memerlukan operator dereference eksplisit. Mekanisme ini memberikan kemudahan sintaks tanpa kehilangan kemampuan untuk memodifikasi variabel asli [2].
 
 ### C. Function dan Procedure<br/>
-Dalam pemrograman modular, function dan procedure merupakan blok kode yang dirancang untuk melakukan tugas tertentu [3].
+Dalam pemrograman modular, function dan procedure merupakan blok kode yang dirancang untuk melakukan tugas tertentu [3]. Pendekatan modular ini meningkatkan organisasi kode, mengurangi duplikasi, dan memudahkan proses debugging serta maintenance.
 #### 1. Function
-Function adalah subprogram yang mengembalikan nilai setelah dieksekusi. Dalam C++, function dideklarasikan dengan tipe return value tertentu [3].
+Function adalah subprogram yang mengembalikan nilai setelah dieksekusi. Dalam C++, function dideklarasikan dengan tipe return value tertentu Function ideal digunakan ketika kita membutuhkan hasil perhitungan atau operasi yang akan digunakan kembali dalam program. Function membantu dalam memecah program besar menjadi bagian-bagian kecil yang lebih terkelola [3].
 #### 2. Procedure
-Procedure (dalam C++ biasanya berupa void function) adalah subprogram yang tidak mengembalikan nilai. Procedure digunakan untuk menjalankan serangkaian perintah tanpa perlu menghasilkan nilai balik [3].
+Procedure (dalam C++ biasanya berupa void function) adalah subprogram yang tidak mengembalikan nilai. Procedure digunakan untuk menjalankan serangkaian perintah tanpa perlu menghasilkan nilai balik, seperti menampilkan output atau memodifikasi variabel global. Procedure berguna untuk mengelompokkan kode yang melakukan tugas tertentu tanpa membutuhkan nilai kembali [3].
 
 ## Guided 
 
