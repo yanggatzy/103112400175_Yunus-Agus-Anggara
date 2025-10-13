@@ -1,5 +1,3 @@
-
-
 #include <iostream>
 #include "mahasiswa.h"
 #include <cstdlib>

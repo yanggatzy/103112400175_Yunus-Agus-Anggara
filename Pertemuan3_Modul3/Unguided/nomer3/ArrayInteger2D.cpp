@@ -1,69 +1,55 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
-// Prosedur untuk menampilkan matriks 3x3
-void cetakMatriks(int mat[3][3]) {
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            cout << mat[i][j] << "\t";
+// Fungsi tampil matriks
+void tampil(int m[3][3]) {
+    for(int i = 0; i < 3; i++) {
+        for(int j = 0; j < 3; j++) {
+            cout << m[i][j] << " ";
         }
-        cout << "\n";
+        cout << endl;
     }
-    cout << "\n";
 }
 
-// Fungsi untuk pertukaran nilai melalui pointer
-void pertukaranNilai(int *nilaiA, int *nilaiB) {
-    int sementara = *nilaiA;
-    *nilaiA = *nilaiB;
-    *nilaiB = sementara;
+// Fungsi tukar elemen matriks berdasarkan posisi
+void tukarElemen(int a[3][3], int b[3][3], int baris, int kolom) {
+    int temp = a[baris][kolom];
+    a[baris][kolom] = b[baris][kolom];
+    b[baris][kolom] = temp;
 }
 
-// Prosedur untuk menukar elemen pada dua matriks
-void tukarMatriks(int matriksA[3][3], int matriksB[3][3], int posBaris, int posKolom) {
-    int *alamatA = &matriksA[posBaris][posKolom];
-    int *alamatB = &matriksB[posBaris][posKolom];
-    pertukaranNilai(alamatA, alamatB);
+// Fungsi tukar nilai menggunakan pointer
+void tukarPointer(int *x, int *y) {
+    int temp = *x;
+    *x = *y;
+    *y = temp;
 }
 
 int main() {
-    // Inisialisasi dua matriks 3x3
-    int matriksPertama[3][3] = {
-        {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}
-    };
+    // Deklarasi 2 matriks 3x3
+    int matriksA[3][3] = {{1,2,3}, {4,5,6}, {7,8,9}};
+    int matriksB[3][3] = {{9,8,7}, {6,5,4}, {3,2,1}};
     
-    int matriksKedua[3][3] = {
-        {10, 11, 12},
-        {13, 14, 15},
-        {16, 17, 18}
-    };
-
-    // Menampilkan kondisi awal matriks
-    cout << "Kondisi awal Matriks Pertama:\n";
-    cetakMatriks(matriksPertama);
-    cout << "Kondisi awal Matriks Kedua:\n";
-    cetakMatriks(matriksKedua);
-
-    // Menentukan posisi dan melakukan pertukaran elemen
-    int barisPertukaran = 1, kolomPertukaran = 2;
-    tukarMatriks(matriksPertama, matriksKedua, barisPertukaran, kolomPertukaran);
-
-    // Menampilkan hasil setelah pertukaran
-    cout << "Hasil setelah pertukaran elemen [" << barisPertukaran << "][" << kolomPertukaran << "]:\n";
-    cout << "Matriks Pertama:\n";
-    cetakMatriks(matriksPertama);
-    cout << "Matriks Kedua:\n";
-    cetakMatriks(matriksKedua);
-
-    // Demonstrasi pertukaran nilai menggunakan pointer
-    int nilaiX = 100, nilaiY = 200;
-    int *pointerX = &nilaiX, *pointerY = &nilaiY;
-
-    cout << "Sebelum pertukaran: nilaiX = " << nilaiX << ", nilaiY = " << nilaiY << "\n";
-    pertukaranNilai(pointerX, pointerY);
-    cout << "Setelah pertukaran: nilaiX = " << nilaiX << ", nilaiY = " << nilaiY << "\n";
-
+    // Deklarasi 2 pointer
+    int *ptr1, *ptr2;
+    int a = 10, b = 20;
+    ptr1 = &a;
+    ptr2 = &b;
+    
+    // Tampilkan awal
+    cout << "Matriks A:\n"; tampil(matriksA);
+    cout << "Matriks B:\n"; tampil(matriksB);
+    
+    // Tukar elemen matriks di posisi [1][2]
+    tukarElemen(matriksA, matriksB, 1, 2);
+    cout << "\nSetelah tukar elemen [1][2]:\n";
+    cout << "Matriks A:\n"; tampil(matriksA);
+    cout << "Matriks B:\n"; tampil(matriksB);
+    
+    // Tukar nilai menggunakan pointer
+    cout << "\nSebelum tukar pointer: a=" << a << " b=" << b << endl;
+    tukarPointer(ptr1, ptr2);
+    cout << "Setelah tukar pointer: a=" << a << " b=" << b << endl;
+    
     return 0;
 }
