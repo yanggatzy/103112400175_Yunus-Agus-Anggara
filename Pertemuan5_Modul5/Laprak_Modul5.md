@@ -26,9 +26,9 @@ Binary Search adalah algoritma pencarian yang bekerja dengan cara membagi data m
 2. Proses pencarian dilakukan dengan menemukan node tengah di setiap iterasi.
 3. Kompleksitas waktu secara teori adalah O(log n), tetapi pada Linked List bisa meningkat karena traversal.
 #### Kelebihan
-Lebih cepat dari Linear Search pada data besar yang sudah terurut.
+- Lebih cepat dari Linear Search pada data besar yang sudah terurut.
 #### Kekurangan
-Kurang efisien pada Linked List karena tidak bisa langsung mengakses elemen tengah.
+- Kurang efisien pada Linked List karena tidak bisa langsung mengakses elemen tengah.
 
 ## Guided 
 
