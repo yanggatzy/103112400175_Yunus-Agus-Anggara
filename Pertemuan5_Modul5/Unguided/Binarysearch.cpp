@@ -32,7 +32,7 @@ Node* getNodeAt(Node* head, int index) {//mendapatkan node pada index tertentu
 
 void printList(Node* head) {//menampilkan linked list
     cout << "BINARYSEARCH PADA LINKED LIST" << endl;
-    cout << "Linked List: -> ";
+    cout << "Linked List: ";
     Node* temp = head;
     while (temp) {
         cout << temp->data << " -> ";
