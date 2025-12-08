@@ -258,7 +258,7 @@ int main(){
 }
 ```
 
-Guided 2 menjelaskan bagaimana membangun struktur Binary Search Tree (BST), yang menyimpan data secara terurut dengan aturan bahwa nilai lebih kecil berada di kiri dan nilai lebih besar berada di kanan. Materi mencakup pembuatan node baru, proses penyisipan node ke dalam BST, serta penggunaan tiga metode traversal—InOrder, PreOrder, dan PostOrder—untuk menelusuri dan menampilkan data dari tree. Selain itu, fungsi rekursif juga digunakan untuk menghitung jumlah node dan kedalaman tree, sehingga mahasiswa dapat memahami bagaimana BST bekerja sebagai struktur data hierarkis yang efisien.
+Guided 2 menjelaskan bagaimana membangun struktur Binary Search Tree (BST), yang menyimpan data secara terurut dengan aturan bahwa nilai lebih kecil berada di kiri dan nilai lebih besar berada di kanan. Materi mencakup pembuatan node baru, proses penyisipan node ke dalam BST, serta penggunaan tiga metode traversal InOrder, PreOrder, dan PostOrder untuk menelusuri dan menampilkan data dari tree. Selain itu, fungsi rekursif juga digunakan untuk menghitung jumlah node dan kedalaman tree, sehingga mahasiswa dapat memahami bagaimana BST bekerja sebagai struktur data hierarkis yang efisien.
 
 ### 3. Binary Search Tree 2
 BST2.H
@@ -623,10 +623,7 @@ Buatlah ADT Binary Search Tree menggunakan Linked list sebagai berikut di dalam 
 
 Type infotype: integer
 Type address : pointer to Node
-Type Node: <
-info : infotype
-left, right : address
->
+Type Node: < info : infotype; left, right : address >
 function alokasi( x : infotype ) → address
 procedure insertNode( input/output root : address,input x : infotype )
 function findNode( x : infotype, root : address )→address
@@ -738,14 +735,14 @@ int main() {
 ##### Output 1
 ![Screenshot Output Unguided 1_10](https://github.com/yanggatzy/103112400175_Yunus-Agus-Anggara/blob/main/Pertemuan10_Modul10/Unguided//Unguided1/Output-Unguided1-Modul10.png)
 
-Pada Unguided 1, mahasiswa diminta membuat dua fungsi rekursif, yaitu fungsi untuk menghitung deret Fibonacci dan fungsi untuk menghitung perpangkatan bilangan. Latihan ini memperkuat pemahaman bahwa rekursi bekerja dengan memecah persoalan besar menjadi sub-masalah yang lebih kecil hingga mencapai kondisi dasar. Fibonacci mencontohkan rekursi bercabang, sedangkan perpangkatan mencontohkan rekursi linear, sehingga mahasiswa dapat membedakan pola rekursi yang berbeda berdasarkan kasus penggunaannya.
+Pada Unguided 1, mahasiswa diminta membuat fungsi traversal inorder pada struktur Binary Search Tree (BST). Traversal inorder menelusuri subtree kiri terlebih dahulu, kemudian node saat ini, lalu subtree kanan. Pola penelusuran ini secara alami menghasilkan keluaran yang terurut dari yang paling kecil hingga terbesar, sesuai sifat BST. Latihan ini bertujuan agar mahasiswa memahami bagaimana proses penelusuran dilakukan secara rekursif dan bagaimana pointer berpindah dari satu node ke node lainnya sehingga membentuk urutan keluaran yang konsisten dan terstruktur.
 
 ### 2. Buatlah fungsi untuk menghitung jumlah node dengan fungsi berikut.
-➢ fungsi hitungJumlahNode( root:address ) : integer
+- fungsi hitungJumlahNode( root:address ) : integer
 /* fungsi mengembalikan integer banyak node yang ada di dalam BST*/
-➢ fungsi hitungTotalInfo( root:address, start:integer ) : integer
+- fungsi hitungTotalInfo( root:address, start:integer ) : integer
 /* fungsi mengembalikan jumlah (total) info dari node-node yang ada di dalam BST*/
-➢ fungsi hitungKedalaman( root:address, start:integer ) : integer
+- fungsi hitungKedalaman( root:address, start:integer ) : integer
 /* fungsi rekursif mengembalikan integer kedalaman maksimal dari binary tree */
 
 bstree.h
@@ -887,7 +884,7 @@ int main() {
 ##### Output 1
 ![Screenshot Output Unguided 2_10](https://github.com/yanggatzy/103112400175_Yunus-Agus-Anggara/blob/main/Pertemuan10_Modul10/Unguided//Unguided2/Output-Unguided2-Modul10.png)
 
-Pada Unguided 2, mahasiswa diminta menambahkan tiga fungsi analitis pada BST, yaitu menghitung jumlah node, menghitung total nilai semua info node, dan menghitung kedalaman tree maksimal. Ketiga fungsi ini menggunakan rekursi sebagai dasar proses penelusuran, di mana setiap langkah menelusuri subtree kiri dan kanan untuk mengumpulkan data. Latihan ini memperkenalkan cara melakukan agregasi pada struktur tree serta menunjukkan bagaimana kedalaman tree dapat mempengaruhi performa operasi pencarian.
+Pada Unguided 2, mahasiswa mengimplementasikan tiga fungsi analitis penting pada BST, yaitu menghitung kedalaman (height), menghitung jumlah node, serta menghitung total nilai informasi dari seluruh node. Ketiga fungsi ini dibuat menggunakan rekursi dengan cara menjelajahi setiap subtree untuk menggabungkan hasil perhitungan. Fungsi kedalaman mengembalikan tinggi maksimum tree, fungsi jumlah node mengembalikan banyaknya simpul dalam tree, sedangkan fungsi total info menghitung penjumlahan nilai pada setiap node. Latihan ini menguatkan pemahaman tentang rekursi sekaligus melatih mahasiswa melihat struktur tree dari perspektif analisis data.
 
 ### 3. Print tree secara pre-order dan post-order.
 
@@ -1055,10 +1052,10 @@ int main() {
 ##### Output 1
 ![Screenshot Output Unguided 3_10](https://github.com/yanggatzy/103112400175_Yunus-Agus-Anggara/blob/main/Pertemuan10_Modul10/Unguided//Unguided3/Output-Unguided3-Modul10.png)
 
-Unguided 3 berfokus pada pembangunan Binary Search Tree secara menyeluruh, mulai dari pembuatan struktur node, fungsi insert, pencarian, hingga traversal InOrder, PreOrder, dan PostOrder. Tugas ini mengajak mahasiswa mengimplementasikan logika rekursif untuk menelusuri tree, memahami pengaturan posisi kiri dan kanan pada setiap node, serta memverifikasi hasil output agar sesuai dengan sifat BST. Dengan latihan ini, mahasiswa belajar bagaimana struktur data tree mengelola data secara terurut dan dapat diakses dengan kompleksitas waktu yang efisien.
+Pada Unguided 3, mahasiswa diminta melengkapi program dengan tiga jenis traversal tree: preorder, inorder, dan postorder. Ketiganya menelusuri node menggunakan urutan yang berbeda—preorder memproses akar terlebih dahulu, inorder memproses node secara terurut, dan postorder memproses node setelah seluruh subtree selesai—sehingga menghasilkan keluaran dan tujuan penggunaan yang berbeda. Latihan ini mengajarkan mahasiswa bagaimana setiap jenis traversal bekerja serta bagaimana rekursi dapat digunakan untuk memproses struktur hierarki seperti tree secara sistematis dan konsisten.
 
 ## Kesimpulan
-Secara keseluruhan, praktikum ini membantu mahasiswa memahami konsep rekursi dan penerapannya dalam struktur data Binary Search Tree. Melalui guided dan unguided, mahasiswa dilatih mengimplementasikan operasi dasar seperti insert, search, traversal, serta analisis seperti menghitung node dan kedalaman. Praktikum ini menegaskan bahwa rekursi sangat efektif digunakan pada struktur data yang bersifat hierarkis seperti tree, dan BST memberikan dasar penting untuk memahami algoritma pencarian yang efisien.
+Secara keseluruhan, rangkaian tugas unguided ini membantu mahasiswa memahami operasi dasar dan lanjutan pada Binary Search Tree, mulai dari traversal sederhana hingga perhitungan struktur tree. Melalui penerapan rekursi dalam berbagai fungsi, mahasiswa mendapatkan pemahaman mendalam tentang bagaimana tree diproses, dianalisis, dan ditelusuri. Praktikum ini menegaskan pentingnya BST sebagai struktur data yang efisien dan rekursi sebagai teknik utama dalam pengelolaan data berbasis pohon.
 
 ## Referensi
 [1] Samanta, D. “Classic Data Structures.” Prentice-Hall India, 2019.
