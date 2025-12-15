@@ -2,21 +2,27 @@
 <p align="center">Yunus Agus Anggara - 103112400175</p>
 
 ## Dasar Teori
-isi dengan penjelasan dasar teori disertai referensi jurnal (gunakan kurung siku [] untuk pernyataan yang mengambil refernsi dari jurnal).
-contoh :
-Linked list atau yang disebut juga senarai berantai adalah Salah satu bentuk struktur data yang berisi kumpulan data yang tersusun secara sekuensial, saling bersambungan, dinamis, dan terbatas[1]. Linked list terdiri dari sejumlah node atau simpul yang dihubungkan secara linier dengan bantuan pointer.
+Struktur data merupakan cara untuk menyimpan, mengatur, dan mengelola data di dalam memori komputer agar dapat digunakan secara efisien. Salah satu struktur data dinamis yang sering digunakan adalah linked list. Linked list atau senarai berantai adalah struktur data yang terdiri dari kumpulan node yang saling terhubung melalui pointer, bersifat dinamis, dan tidak membutuhkan alokasi memori secara berurutan seperti array [1].
 
-### A. ...<br/>
-...
-#### 1. ...
-#### 2. ...
-#### 3. ...
+Multi Linked List (MLL) merupakan pengembangan dari linked list yang memungkinkan satu node induk (parent) memiliki satu atau lebih daftar node anak (child). Struktur ini sangat cocok digunakan untuk merepresentasikan data yang bersifat hierarkis, seperti kategori dan subkategori, relasi one-to-many, maupun struktur organisasi [2]. Dengan menggunakan Multi Linked List, setiap node parent dapat menyimpan data serta pointer menuju linked list anaknya sendiri.
 
-### B. ...<br/>
-...
-#### 1. ...
-#### 2. ...
-#### 3. ...
+### A. Linked List<br/>
+Linked list adalah struktur data linear yang setiap elemennya disebut node. Setiap node menyimpan data dan pointer ke node berikutnya. Tidak seperti array, linked list tidak memerlukan ukuran tetap sehingga lebih fleksibel dalam pengelolaan memori [1].
+#### 1. Single Linked List
+Single linked list memiliki satu pointer yang menunjuk ke node berikutnya. Traversal hanya dapat dilakukan satu arah.
+#### 2. Double Linked List
+Double linked list memiliki dua pointer, yaitu next dan prev, sehingga traversal dapat dilakukan dua arah. Struktur ini mempermudah operasi penghapusan dan penyisipan data.
+#### 3. Circular Linked List
+Circular linked list memiliki node terakhir yang menunjuk kembali ke node pertama, sehingga membentuk lingkaran.
+
+### B. Multi Linked List<br/>
+Multi Linked List adalah struktur data yang terdiri dari dua tingkat linked list, yaitu linked list parent dan linked list child. Setiap node parent memiliki pointer ke sebuah linked list child.
+#### 1. Node Parent
+Node parent menyimpan data utama (misalnya golongan hewan) dan memiliki pointer ke node parent lain serta sebuah list child.
+#### 2. Node Child
+Node child menyimpan data turunan (misalnya data hewan) dan terhubung dalam sebuah linked list yang dimiliki oleh satu node parent.
+#### 3. Kelebihan Multi Linked List
+Kelebihan utama Multi Linked List adalah kemampuannya dalam merepresentasikan relasi data yang kompleks secara terstruktur, fleksibel, dan efisien dalam penelusuran data berdasarkan kategori [2].
 
 ## Guided 
 
@@ -352,11 +358,16 @@ int main() {
     return 0;
 }
 ```
-penjelasan singkat guided 1
+Pada bagian Guided, praktikum berfokus pada implementasi dasar Multi Linked List menggunakan studi kasus kategori makanan dan menu makanan. Struktur data terdiri dari node induk (parent) yang merepresentasikan kategori makanan dan node anak (child) yang merepresentasikan menu makanan pada setiap kategori.
+
+File multilist.h berisi deklarasi struktur data, tipe pointer, serta prototype fungsi yang digunakan. File multilist.cpp berisi implementasi fungsi-fungsi tersebut, seperti pembuatan list, alokasi dan dealokasi node, operasi penambahan dan penghapusan node parent maupun child, pencarian data child berdasarkan ID, serta penampilan seluruh struktur Multi Linked List.
+
+Pada file main.cpp, dilakukan pengujian dengan menambahkan beberapa kategori makanan beserta menu-menunya, melakukan pencarian data child, menghapus node child dan node parent, serta menampilkan struktur data sebelum dan sesudah operasi dilakukan. Hasil output menunjukkan bahwa struktur Multi Linked List berjalan sesuai dengan yang diharapkan.
 
 ## Unguided 
 
 ### 1. Unguided 
+
 MultiLL.h
 ```C++
 #ifndef MULTILL_H
@@ -434,6 +445,7 @@ void searchHewanByEkor(listParent &LParent, bool tail);
 
 #endif
 ```
+
 MultiLL.cpp
 ```C++
 #include "MultiLL.h"
@@ -655,6 +667,7 @@ void searchHewanByEkor(listParent &LParent, bool tail){
     }
 }
 ```
+
 main.cpp
 ```C++
 #include "MultiLL.h"
@@ -695,11 +708,11 @@ int main(){
     return 0;
 }
 ```
+
 ### Output Unguided :
 
 ##### Output 1
 ![Screenshot Output Unguided 1_13](https://github.com/yanggatzy/103112400175_Yunus-Agus-Anggara/blob/main/Pertemuan11_Modul13/Unguided/Output-Unguided1-Modul13.png)
-
 
 ##### Output 2
 ![Screenshot Output Unguided 2_13](https://github.com/yanggatzy/103112400175_Yunus-Agus-Anggara/blob/main/Pertemuan11_Modul13/Unguided/Output-Unguided2-Modul13.png)
@@ -707,12 +720,20 @@ int main(){
 ##### Output 3
 ![Screenshot Output Unguided 3_13](https://github.com/yanggatzy/103112400175_Yunus-Agus-Anggara/blob/main/Pertemuan11_Modul13/Unguided/Output-Unguided3-Modul13.png)
 
+Pada bagian Unguided, implementasi Multi Linked List dikembangkan lebih lanjut dengan studi kasus golongan hewan dan data hewan. Node parent merepresentasikan golongan hewan, sedangkan node child merepresentasikan data hewan yang termasuk dalam golongan tersebut.
+Fitur yang diimplementasikan meliputi:
+- Pembuatan list parent dan child
+- Alokasi dan dealokasi node
+- Operasi insert dan delete pada parent dan child
+- Menampilkan seluruh struktur Multi Linked List
+- Pencarian data hewan berdasarkan atribut ekor (berekor atau tidak)
 
+Program diuji menggunakan beberapa data golongan hewan dan data hewan. Hasil pengujian menunjukkan bahwa operasi insert, search, delete, dan print berjalan dengan benar, serta struktur Multi Linked List dapat merepresentasikan hubungan hierarkis data secara jelas dan terorganisir.
 
 ## Kesimpulan
-...
+Berdasarkan hasil praktikum Modul 13, dapat disimpulkan bahwa Multi Linked List merupakan struktur data yang efektif untuk merepresentasikan data hierarkis dengan relasi satu-ke-banyak (one-to-many). Implementasi Multi Linked List memungkinkan pengelolaan data parent dan child secara terpisah namun tetap terhubung dalam satu struktur yang utuh. Operasi penambahan, penghapusan, pencarian, dan penelusuran data dapat dilakukan secara efisien. Dengan demikian, Multi Linked List sangat cocok digunakan dalam aplikasi yang memerlukan pengelompokan data berdasarkan kategori tertentu, seperti sistem klasifikasi, manajemen data, dan basis data sederhana.
 
 ## Referensi
-[1] Triase. (2020). Diktat Edisi Revisi : STRUKTUR DATA. Medan: UNIVERSTAS ISLAM NEGERI SUMATERA UTARA MEDAN. 
-<br>[2] Indahyati, Uce., Rahmawati Yunianita. (2020). "BUKU AJAR ALGORITMA DAN PEMROGRAMAN DALAM BAHASA C++". Sidoarjo: Umsida Press. Diakses pada 10 Maret 2024 melalui https://doi.org/10.21070/2020/978-623-6833-67-4.
-<br>...
+[1] S. Sahni, Data Structures, Algorithms, and Applications in C++, 2nd ed. McGraw-Hill, 2004.
+[2] A. Tenenbaum, Y. Langsam, and M. J. Augenstein, Data Structures Using C and C++, Prentice Hall, 1996.
+
